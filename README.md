@@ -2,13 +2,14 @@
 
 This repository implements Multimodal-Conditioned Flow Matching for Pathology Nuclei Data Augmentation.
 
+# Data preparation
 Multi-class pathology nuclei dataset preparation
-# Sel-supervised learning (SSL) feature representation
-# Pathology foundation model: UNI, Virchow2,....
+Sel-supervised learning (SSL) feature representation
+Pathology foundation model: UNI, Virchow2,....
 
-# Text descriptions of multi-class nuclei mask
+Text descriptions of multi-class nuclei mask
 "Organ tissue type, nulcei type: proporation"
-# Pathology visual-language model: QuiltNet, MUSK, ....
+Pathology visual-language model: QuiltNet, MUSK, ....
 
 Quick start
 
