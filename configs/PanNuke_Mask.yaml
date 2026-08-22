@@ -1,0 +1,48 @@
+model_args:
+  spatial_dims: 2
+  in_channels: 8
+  out_channels: 8
+  num_res_blocks: [2, 2, 2, 2, 2]
+  num_channels: [32, 64, 128, 256, 512]
+  attention_levels: [False, False, False, True, True]
+  norm_num_groups: 32
+  resblock_updown: True
+  num_head_channels: [32, 64, 128, 256, 512]
+  transformer_num_layers: 8
+
+  use_flash_attention: True
+  # dropout_cattn: 0.2
+
+  with_conditioning: True
+  cross_attention_dim: 1024 # Dim of Text embeddings
+
+
+general_args:
+  # Toggle whether to build a ControlNet alongside the UNet
+  mask_conditioning: true # For Mask Conditioning
+  class_conditioning: true # For Class Conditioning
+
+data_args:
+  data_path: "/home/PanNuke/"
+  task: "mask" # "Mask" for nuclei multi-class mask generation
+
+train_args:
+  # Basic training hyperparameters
+  num_epochs: 200
+  batch_size: 4
+  lr: 0.0001
+  # Logging & checkpointing frequency
+  print_every: 1
+  val_freq: 5
+  device: "cuda:0" 
+  num_val_samples: 10
+  checkpoint_dir: /home/mask_checkpoints
+
+solver_args: 
+  # ODE/flow matching hyperparameters
+  method: "euler"
+  step_size: 0.1
+  time_points: 10
+
+
+
